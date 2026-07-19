@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQT2XHML28"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SQT2XHML28');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grim's Tattoo Studio u Vitezu - dotwork, traditional i custom tetovaže uz direktan dogovor termina preko WhatsAppa.">
+  <meta name="theme-color" content="#090907">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23090907'/%3E%3Cpath d='M17 45 32 12l15 33h-9l-2-6h-8l-2 6h-9Zm14-13h3l-1.5-5-1.5 5Z' fill='%23c7a76a'/%3E%3C/svg%3E">
+  <title>Grim's Tattoo Studio - Vitez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Pirata+One&amp;display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    *{margin:0}
+    :root{
+      --ink:#090907;
+      --ink-2:#11110e;
+      --paper:#f1eadf;
+      --paper-2:#d7cfc1;
+      --muted:#a9a094;
+      --gold:#c7a76a;
+      --gold-2:#8d7141;
+      --clay:#7d3f35;
+      --moss:#2f5248;
+      --line:rgba(241,234,223,.15);
+      --line-dark:rgba(9,9,7,.14);
+      --shadow:0 24px 80px rgba(0,0,0,.34);
+      --display:"Pirata One",Georgia,serif;
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"Manrope","Helvetica Neue",Arial,sans-serif;
+    }
+    html{scroll-behavior:smooth;background:var(--ink)}
+    body{min-width:320px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.65;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    ::selection{background:var(--gold);color:var(--ink)}
+    .wrap{width:calc(100% - 40px);max-width:1180px;margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:.75rem;color:var(--gold);font-size:.68rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+    .display{font-family:var(--serif);font-size:clamp(3rem,7vw,6.7rem);font-weight:600;line-height:.84;letter-spacing:0;text-wrap:balance}
+    .section-head{display:grid;grid-template-columns:.78fr 1.22fr;align-items:end;gap:clamp(2rem,5vw,5rem);margin-bottom:clamp(2.6rem,6vw,4.8rem)}
+    .section-head p{max-width:620px;color:var(--muted);font-size:1rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:52px;padding:.9rem 1.2rem;border:1px solid transparent;background:transparent;color:inherit;font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--gold);color:var(--ink)}
+    .btn-primary:hover{background:var(--paper)}
+    .btn-secondary{border-color:rgba(241,234,223,.34);background:rgba(9,9,7,.28)}
+    .btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+    .btn-dark{background:var(--ink);color:var(--paper)}
+    .btn-dark:hover{background:var(--clay)}
+    .arrow{font-size:1rem;line-height:1}
+
+    .site-nav{position:fixed;inset:0 0 auto;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:1.05rem clamp(1.25rem,3vw,3.25rem);transition:background .25s ease,border-color .25s ease,backdrop-filter .25s ease}
+    .site-nav.scrolled{background:rgba(9,9,7,.86);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .brand{display:inline-flex;align-items:baseline;gap:.35rem;font-family:var(--serif);font-size:1.35rem;font-weight:700;line-height:1;white-space:nowrap}
+    .brand span{color:var(--gold);font-style:normal;font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:clamp(1rem,2.5vw,2.5rem)}
+    .nav-links a{position:relative;color:rgba(241,234,223,.72);font-size:.68rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;transition:color .2s ease}
+    .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:100%;bottom:-.45rem;height:1px;background:var(--gold);transition:right .2s ease}
+    .nav-links a:hover{color:var(--paper)}
+    .nav-links a:hover::after{right:0}
+    .nav-cta{padding:.72rem .95rem;border:1px solid rgba(199,167,106,.48);color:var(--paper)!important}
+    .nav-cta:hover{background:var(--gold);color:var(--ink)!important}
+    .nav-toggle{display:none;width:44px;height:44px;border:1px solid rgba(241,234,223,.24);background:rgba(9,9,7,.45);color:var(--paper);cursor:pointer}
+    .nav-toggle span{display:block;width:19px;height:1px;margin:5px auto;background:currentColor;transition:transform .22s ease,opacity .22s ease}
+
+    .hero{position:relative;min-height:92svh;display:grid;align-items:end;isolation:isolate;overflow:hidden;background:#080806}
+    .hero-media,.hero-overlay{position:absolute;inset:0}
+    .hero-media{z-index:-3}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(.92) contrast(1.03) brightness(.44);transform:scale(1.04)}
+    .hero-overlay{z-index:-2;background:linear-gradient(90deg,rgba(9,9,7,.94) 0%,rgba(9,9,7,.76) 48%,rgba(9,9,7,.9) 100%),linear-gradient(180deg,rgba(9,9,7,.38) 0%,rgba(9,9,7,.58) 45%,var(--ink) 100%),radial-gradient(circle at 28% 32%,rgba(199,167,106,.12),transparent 34%)}
+    .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;z-index:-1;height:34%;background:repeating-linear-gradient(90deg,rgba(241,234,223,.08) 0 1px,transparent 1px 12.5%)}
+    .hero-inner{padding:8.5rem 0 clamp(3.7rem,8vw,5.6rem)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.62fr);gap:clamp(2rem,7vw,6rem);align-items:end}
+    .hero-grid > *{min-width:0}
+    .hero-logo{width:100%;max-width:680px;aspect-ratio:2.06/1;margin-top:1rem;filter:drop-shadow(0 18px 48px rgba(0,0,0,.5))}
+    .hero-logo img{width:100%;height:100%;display:block;object-fit:contain;object-position:left center}
+    .hero-manifesto{position:relative;width:100%;max-width:760px;margin-top:1.45rem;overflow:hidden;border-block:1px solid rgba(199,167,106,.34);color:rgba(241,234,223,.9);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
+    .hero-manifesto-track{display:flex;width:max-content;gap:1.15rem;padding:.72rem 0;animation:manifestoSlide 22s linear infinite}
+    .hero-manifesto span{display:inline-flex;align-items:center;gap:1.15rem;white-space:nowrap;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .hero-manifesto span::after{content:"/";color:var(--gold)}
+    @keyframes manifestoSlide{to{transform:translateX(-50%)}}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
+    .hero-panel{border-left:1px solid rgba(199,167,106,.52);padding-left:1.35rem}
+    .hero-panel p{color:rgba(241,234,223,.68);font-size:.95rem}
+    .hero-panel strong{display:block;margin-bottom:.8rem;color:var(--paper);font-family:var(--serif);font-size:1.8rem;font-weight:600;line-height:1.05}
+    .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(9,9,7,.62)}
+    .hero-fact{padding:1.25rem clamp(1.15rem,2vw,2rem);border-right:1px solid var(--line)}
+    .hero-fact:last-child{border-right:0}
+    .hero-fact small{display:block;margin-bottom:.25rem;color:var(--gold);font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .hero-fact span{font-family:var(--serif);font-size:1.42rem;line-height:1.1}
+
+    section{position:relative;padding:clamp(5rem,10vw,8rem) 0}
+    .intro{background:var(--paper);color:var(--ink)}
+    .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2rem,6vw,5.5rem);align-items:center}
+    .intro .eyebrow{color:var(--gold-2)}
+    .intro p{margin-top:1.25rem;color:#555047;font-size:1.02rem}
+    .intro-lines{display:grid;gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+    .intro-line{display:grid;grid-template-columns:92px 1fr;gap:1.25rem;align-items:center;padding:1.2rem;background:#fbf7ef}
+    .intro-line b{font-family:var(--serif);color:var(--clay);font-size:2.1rem;line-height:1}
+    .intro-line span{color:#413c34}
+
+    .styles{background:var(--ink)}
+    .style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .style-card{min-height:320px;padding:clamp(1.5rem,3vw,2.3rem);background:var(--ink-2);display:flex;flex-direction:column;justify-content:space-between;transition:background .2s ease}
+    .style-card:hover{background:#181713}
+    .style-card small{color:var(--gold);font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .style-card h3{margin-top:1.3rem;font-family:var(--serif);font-size:clamp(2.1rem,4vw,3.4rem);font-weight:600;line-height:.92}
+    .style-card p{margin-top:1rem;color:var(--muted);font-size:.95rem}
+    .style-card .mark{align-self:flex-end;color:rgba(199,167,106,.42);font-family:var(--serif);font-size:4.5rem;line-height:1}
+
+    .work{background:#171511;color:var(--paper);overflow:hidden}
+    .work-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+    .work-photo{position:relative;min-height:640px;overflow:hidden}
+    .work-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;filter:grayscale(.75) contrast(1.08)}
+    .work-photo::after{content:"";position:absolute;inset:0;border:1px solid rgba(241,234,223,.18);pointer-events:none}
+    .work-copy{padding-block:2rem}
+    .work-copy p{max-width:620px;margin-top:1.2rem;color:var(--muted)}
+    .work-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
+    .about-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:2rem;background:var(--line);border:1px solid var(--line)}
+    .about-fact{padding:1rem;background:#0f0f0c}
+    .about-fact b{display:block;color:var(--gold);font-family:var(--serif);font-size:2.55rem;line-height:1}
+    .about-fact span{display:block;margin-top:.35rem;color:rgba(241,234,223,.62);font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .feed-section{scroll-margin-top:90px;background:#171511;color:var(--paper);padding-top:0}
+    .feed-section .section-head{margin-bottom:2rem}
+    .instagram-feed-box{scroll-margin-top:90px;margin-top:2rem;min-height:430px;overflow:hidden;border:1px solid rgba(241,234,223,.18);background:rgba(241,234,223,.05)}
+    .instagram-feed-box behold-widget{display:block;width:100%;min-height:430px}
+    .feed-note{margin-top:1rem;color:rgba(241,234,223,.54);font-size:.82rem;text-align:right}
+    .feed-note a{color:var(--gold);font-weight:800}
+    .portfolio-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3rem;background:var(--line);border:1px solid var(--line)}
+    .portfolio-tile{min-height:155px;padding:1.1rem;background:rgba(241,234,223,.04);display:flex;align-items:end;color:rgba(241,234,223,.72);font-family:var(--serif);font-size:1.55rem;line-height:1.05}
+
+    .process{background:var(--paper);color:var(--ink)}
+    .process .eyebrow{color:var(--gold-2)}
+    .process .section-head p{color:#615b52}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+    .step{min-height:270px;padding:1.6rem;border-right:1px solid var(--line-dark);display:flex;flex-direction:column;justify-content:space-between}
+    .step:last-child{border-right:0}
+    .step-num{color:var(--clay);font-family:var(--serif);font-size:3.1rem;line-height:1}
+    .step h3{margin-top:2.4rem;font-family:var(--serif);font-size:2rem;font-weight:600;line-height:1}
+    .step p{margin-top:.75rem;color:#5e574d;font-size:.94rem}
+
+    .booking{background:var(--moss);color:var(--paper)}
+    .booking-band{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.65fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+    .booking .display{max-width:820px}
+    .booking p{max-width:680px;margin-top:1.2rem;color:rgba(241,234,223,.78)}
+    .booking-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
+    .booking-list{border-top:1px solid rgba(241,234,223,.22)}
+    .booking-list li{list-style:none;display:grid;grid-template-columns:auto 1fr;gap:.9rem;padding:1rem 0;border-bottom:1px solid rgba(241,234,223,.22);color:rgba(241,234,223,.84)}
+    .booking-list span{color:var(--gold);font-weight:800}
+
+    .studio{background:var(--ink);color:var(--paper)}
+    .studio-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.88fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
+    .studio-photo{position:relative;aspect-ratio:4/5;overflow:hidden}
+    .studio-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.75) contrast(1.05)}
+    .studio-photo::after{content:"";position:absolute;inset:14px;border:1px solid rgba(199,167,106,.42);pointer-events:none}
+    .studio-copy p{max-width:630px;margin-top:1rem;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:2rem;background:var(--line);border:1px solid var(--line)}
+    .stat{padding:1rem;background:#0f0f0c}
+    .stat b{display:block;color:var(--gold);font-family:var(--serif);font-size:2.2rem;line-height:1}
+    .stat span{display:block;margin-top:.35rem;color:rgba(241,234,223,.6);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+
+    .location{padding-bottom:0;background:var(--paper);color:var(--ink)}
+    .location .eyebrow{color:var(--gold-2)}
+    .location .section-head p{color:#615b52}
+    .map-shell{border-top:1px solid var(--line-dark);background:#d8d1c4}
+    .map-shell iframe{display:block;width:100%;height:56vw;min-height:390px;max-height:560px;border:0;filter:grayscale(.75) contrast(1.04)}
+    .contact-bar{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);color:var(--paper)}
+    .contact-item{padding:1.45rem clamp(1.25rem,3vw,2rem);border-right:1px solid var(--line)}
+    .contact-item:last-child{border-right:0}
+    .contact-item small{display:block;margin-bottom:.35rem;color:var(--gold);font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .contact-item span,.contact-item a{font-family:var(--serif);font-size:1.35rem;line-height:1.15}
+
+    .faq-section{background:var(--ink);color:var(--paper)}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;display:grid;grid-template-columns:60px 1fr 34px;align-items:center;gap:1rem;padding:1.35rem 0;border:0;background:transparent;color:var(--paper);text-align:left;cursor:pointer}
+    .faq-index{color:var(--gold);font-family:var(--serif);font-size:1.3rem}
+    .faq-title{font-family:var(--serif);font-size:clamp(1.35rem,2.5vw,2rem);line-height:1.14}
+    .faq-icon{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(199,167,106,.5);color:var(--gold);transition:transform .2s ease,background .2s ease,color .2s ease}
+    .faq.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:var(--ink)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-a p{max-width:800px;padding:0 0 1.35rem 60px;color:var(--muted)}
+
+    footer{background:#050504;color:rgba(241,234,223,.62);border-top:1px solid var(--line);padding:3.8rem 0 1.6rem}
+    .footer-grid{display:grid;grid-template-columns:1.5fr .7fr .9fr;gap:2rem;margin-bottom:2.5rem}
+    .footer-grid .brand{margin-bottom:.8rem;color:var(--paper)}
+    .footer-grid p{max-width:390px;font-size:.92rem}
+    .foot-col h4{margin-bottom:.9rem;color:var(--gold);font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .foot-col a,.foot-col span{display:block;margin-bottom:.5rem;font-size:.88rem}
+    .foot-col a:hover{color:var(--paper)}
+    .footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding-top:1.35rem;border-top:1px solid var(--line);font-size:.78rem}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .section-head,.hero-grid,.intro-grid,.work-layout,.booking-band,.studio-grid{grid-template-columns:1fr}
+      .hero-panel{max-width:560px}
+      .style-grid,.steps{grid-template-columns:1fr 1fr}
+      .work-photo{min-height:460px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-brand{grid-column:1/-1}
+    }
+    @media(max-width:760px){
+      .wrap{width:calc(100% - 28px);max-width:1180px}
+      body.menu-open{overflow:hidden}
+      .site-nav{padding:1rem}
+      .nav-toggle{display:block;z-index:42}
+      .nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+      .nav-toggle.open span:nth-child(2){opacity:0}
+      .nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+      .nav-links{position:fixed;inset:0 0 0 auto;width:88vw;max-width:390px;height:100svh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:5rem 2rem;background:rgba(9,9,7,.98);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .25s ease}
+      .nav-links.open{transform:none}
+      .nav-links a{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:0;text-transform:none}
+      .nav-links .nav-cta{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+      .brand{font-size:1.15rem}
+      .hero{min-height:91svh}
+      .hero-inner{padding-top:7.5rem}
+      .hero-media img{object-position:54% center}
+      .hero-logo{max-width:100%}
+      .hero-actions,.booking-actions,.work-actions{width:100%;max-width:360px;flex-direction:column}
+      .hero-actions .btn,.booking-actions .btn,.work-actions .btn{width:100%}
+      .hero-manifesto{max-width:100%}
+      .hero-facts,.portfolio-strip,.contact-bar,.stats,.about-facts{grid-template-columns:1fr}
+      .hero-fact,.contact-item{border-right:0;border-bottom:1px solid var(--line)}
+      .hero-fact:last-child,.contact-item:last-child{border-bottom:0}
+      section{padding:4.4rem 0}
+      .style-grid,.steps{grid-template-columns:1fr}
+      .step{min-height:230px;border-right:0;border-bottom:1px solid var(--line-dark)}
+      .step:last-child{border-bottom:0}
+      .intro-line{grid-template-columns:68px 1fr}
+      .work-photo{min-height:360px}
+      .booking-list{margin-top:1rem}
+      .faq-q{grid-template-columns:42px 1fr 34px}
+      .faq-a p{padding-left:42px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-brand{grid-column:auto}
+      .footer-bottom{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" id="nav" aria-label="Glavna navigacija">
+    <a class="brand" href="#hero">Grim's <span>Tattoo Studio</span></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Otvori navigaciju" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#radovi">Radovi</a>
+      <a href="#stilovi">Stilovi</a>
+      <a href="#proces">Proces</a>
+      <a href="#omeni">O meni</a>
+      <a href="#lokacija">Lokacija</a>
+      <a href="#termin" class="nav-cta">Termin</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="hero-media" aria-hidden="true"><img src="o-meni-web.jpg" alt=""></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Vitez / Dotwork / Traditional</div>
+          <h1 class="hero-logo"><img src="grims tattoo studio logo-2.svg" alt="Grim's Tattoo Studio"></h1>
+          <div class="hero-manifesto" aria-label="No hate - No prejudice - No ego trip - Just tattoos for everyone.">
+            <div class="hero-manifesto-track" aria-hidden="true">
+              <span>No hate</span><span>No prejudice</span><span>No ego trip</span><span>Just tattoos for everyone</span>
+              <span>No hate</span><span>No prejudice</span><span>No ego trip</span><span>Just tattoos for everyone</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" data-track-whatsapp>Pošalji poruku <span class="arrow">↗</span></a>
+            <a class="btn btn-secondary" href="#radovi">Pogledaj radove</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <strong>Od tvoje ideje, do završene kompozicije.</strong>
+          <p>Pošalji opis, mjesto na tijelu, okvirnu veličinu i reference. Odgovaram s prijedlogom termina i smjerom dizajna.</p>
+        </aside>
+      </div>
+    </div>
+    <div class="hero-facts" aria-label="Kratke informacije">
+      <div class="hero-fact"><small>Lokacija</small><span>Stjepana Radića 146</span></div>
+      <div class="hero-fact"><small>Radno vrijeme</small><span>12:00 - 20:00</span></div>
+      <div class="hero-fact"><small>Kontakt</small><span>+387 64 4154 361</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" id="pristup">
+      <div class="wrap intro-grid">
+        <div class="reveal">
+          <div class="eyebrow">Pristup</div>
+          <h2 class="display">Step-by-step do termina</h2>
+          <p>U ova tri koraka dobiješ termin</p>
+        </div>
+        <div class="intro-lines reveal">
+          <div class="intro-line"><b>01</b><span>Javi se porukom.</span></div>
+          <div class="intro-line"><b>02</b><span>Pričamo o ideji, stilu, šalješ referentne fotke, opišeš što želiš.</span></div>
+          <div class="intro-line"><b>03</b><span>Dolaziš u studio u dogovorenom terminu, i ostalo je na meni.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="styles" id="stilovi">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Stilovi</div>
+            <h2 class="display">Dotwork i Traditional</h2>
+          </div>
+          <p>Najviše radim motive koji traže dobru liniju, ili točkastu teksturu. Ako imaš drugačiju ideju, pošalji referencu i vidimo kako je najbolje prevesti u tetovažu.</p>
+        </div>
+        <div class="style-grid reveal">
+          <article class="style-card">
+            <div><small>Dotwork</small><h3>Točka po točka.</h3><p>Svaka sjena nastaje strpljenjem. Dotwork donosi dubinu, teksturu i suptilan kontrast bez teških prijelaza.</p></div>
+            <div class="mark">01</div>
+          </article>
+          <article class="style-card">
+            <div><small>Traditional</small><h3>Čvrsta linija.</h3><p>Motivi sa snažnim obrisom, jasnom ilustracijom i klasičnim tattoo ritmom.</p></div>
+            <div class="mark">02</div>
+          </article>
+          <article class="style-card">
+            <div><small>Custom</small><h3>Tvoja priča.</h3><p>Simboli, lettering i reference spojeni u komad koji ima smisla na tvom tijelu.</p></div>
+            <div class="mark">03</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="omeni">
+      <div class="wrap work-layout">
+        <div class="work-photo reveal"><img src="o-meni-web.jpg" alt="Grim's Tattoo Studio atmosfera"></div>
+        <div class="work-copy reveal">
+          <div class="eyebrow">O meni</div>
+          <h2 class="display">Tko je Grim?</h2>
+          <p>Tetoviram nešto duže od 3 godine, specijaliziran za dotwork &amp; traditional. Svaku tetovažu radim kao zaseban projekt - od prve ideje do zacijeljenog rezultata.</p>
+          <p>Vjerujem da dobra tetovaža počinje razgovorom. Zato uzimam vremena da razumijem što želiš prije nego što uzmem iglu u ruke.</p>
+          <div class="work-actions">
+            <a class="btn btn-primary" href="#termin">Zakaži termin</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/grim.koji.tetovira/" target="_blank" rel="noopener">Instagram <span class="arrow">↗</span></a>
+          </div>
+          <div class="about-facts" aria-label="Iskustvo">
+            <div class="about-fact"><b>100+</b><span>Zadovoljnih klijenata</span></div>
+            <div class="about-fact"><b>3+</b><span>Godina iskustva</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feed-section" id="radovi">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Portfolio</div>
+            <h2 class="display">Nedavni radovi</h2>
+          </div>
+          <p>Ovo je moj instagram feed gdje objavljujem svoje najnovije radove.</p>
+        </div>
+        <div class="instagram-feed-box reveal">
+          <div id="instagramFeed"><behold-widget feed-id="78VkVl2SNpywpcGQxTZK"></behold-widget></div>
+        </div>
+        <p class="feed-note">Live Instagram feed - <a href="https://www.instagram.com/grim.koji.tetovira/" target="_blank" rel="noopener">@grim.koji.tetovira</a></p>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="proces">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Proces</div>
+            <h2 class="display">Od poruke do termina.</h2>
+          </div>
+          <p>Nema dodatnih koraka. Najbrže je poslati poruku sa osnovnim informacijama i referencama, pa dogovor ide direktno i jasno.</p>
+        </div>
+        <div class="steps reveal">
+          <article class="step"><div><div class="step-num">01</div><h3>Pošalji poruku</h3><p>Napiši ideju, mjesto na tijelu, okvirnu veličinu i pošalji reference ako ih imaš.</p></div></article>
+          <article class="step"><div><div class="step-num">02</div><h3>Dogovor</h3><p>Dobiješ odgovor, okvir cijene, smjer dizajna i prijedlog slobodnog termina.</p></div></article>
+          <article class="step"><div><div class="step-num">03</div><h3>Skica</h3><p>Dizajn se čisti i prilagođava tijelu, bez kopiranja tuđih radova jedan na jedan.</p></div></article>
+          <article class="step"><div><div class="step-num">04</div><h3>Tetoviranje</h3><p>Dolaziš u studio, prolazimo poziciju i nakon rada dobijaš upute za njegu.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="termin">
+      <div class="wrap booking-band">
+        <div class="reveal">
+          <div class="eyebrow">Termini</div>
+          <h2 class="display">Pošalji poruku i krenimo od ideje.</h2>
+          <p>U jednoj poruci pošalji opis motiva, dio tijela, okvirnu veličinu i reference. Ako nisi siguran šta tačno želiš, napiši smjer i zajedno ćemo ga razraditi.</p>
+          <div class="booking-actions">
+            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" aria-label="Pošalji poruku na WhatsApp" data-track-whatsapp>WhatsApp poruka <span class="arrow">↗</span></a>
+            <a class="btn btn-secondary" href="tel:+387644154361">Pozovi studio</a>
+          </div>
+        </div>
+        <ul class="booking-list reveal">
+          <li><span>✓</span><p>Opis ideje ili značenja motiva</p></li>
+          <li><span>✓</span><p>Mjesto na tijelu i okvirna veličina</p></li>
+          <li><span>✓</span><p>Reference kao slike ili linkovi</p></li>
+          <li><span>✓</span><p>Datumi ili period koji ti odgovara</p></li>
+        </ul>
+      </div>
+    </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="lokacija">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Lokacija</div>
+            <h2 class="display">Studio je u Vitezu.</h2>
+          </div>
+          <p>Za termin se prvo javi porukom. Tako možemo proći motiv, cijenu i slobodne datume prije dolaska u studio.</p>
+        </div>
+      </div>
+      <div class="map-shell reveal">
+        <iframe title="Lokacija Grim's Tattoo Studija" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d178.92382762813023!2d17.80769940744569!3d44.14975498388841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475f1de79a03633b%3A0x3c63b0e5364f302d!2sGrim%E2%80%99s%20Tattoo%20Studio!5e0!3m2!1sen!2sba!4v1779185011338!5m2!1sen!2sba" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-bar">
+        <div class="contact-item"><small>Adresa</small><span>Stjepana Radića 146, Vitez</span></div>
+        <div class="contact-item"><small>Telefon</small><a href="tel:+387644154361">+387 64 4154 361</a></div>
+        <div class="contact-item"><small>Vrijeme</small><span>Pon - Ned / 12:00 - 20:00</span></div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">FAQ</div>
+            <h2 class="display">Prije termina.</h2>
+          </div>
+          <p>Kratki odgovori na pitanja koja se najčešće pojave prije prvog dogovora ili dolaska u studio.</p>
+        </div>
+        <div class="faq-list reveal">
+          <article class="faq">
+            <button class="faq-q" type="button" aria-expanded="false"><span class="faq-index">01</span><span class="faq-title">Koliko godina moram imati?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Najmanje 18 godina uz važeći dokument. Bez valjanog dokumenta ne radim tetoviranje.</p></div>
+          </article>
+          <article class="faq">
+            <button class="faq-q" type="button" aria-expanded="false"><span class="faq-index">02</span><span class="faq-title">Kako se određuje cijena?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Cijena ovisi o veličini, detaljima, položaju na tijelu i vremenu rada. Okvirnu cijenu šaljem nakon što vidim opis i reference.</p></div>
+          </article>
+          <article class="faq">
+            <button class="faq-q" type="button" aria-expanded="false"><span class="faq-index">03</span><span class="faq-title">Mogu li poslati vlastiti dizajn?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Možeš poslati sve reference. Ne kopiram tuđe radove jedan na jedan, ali ih možemo koristiti kao smjer za originalan dizajn.</p></div>
+          </article>
+          <article class="faq">
+            <button class="faq-q" type="button" aria-expanded="false"><span class="faq-index">04</span><span class="faq-title">Kako se pripremiti?</span><span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Naspavaj se, pojedi prije termina, izbjegavaj alkohol 24 sata prije i obuci nešto što daje pristup dijelu tijela koji se tetovira.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#hero">Grim's <span>Tattoo Studio</span></a>
+          <p>Custom tetovaže u Vitezu. Pošalji poruku, donesi ideju, a ostalo rješavamo mirno i precizno.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Stranica</h4>
+          <a href="#radovi">Radovi</a>
+          <a href="#omeni">O meni</a>
+          <a href="#stilovi">Stilovi</a>
+          <a href="#proces">Proces</a>
+          <a href="#termin">Termin</a>
+        </div>
+        <div class="foot-col">
+          <h4>Kontakt</h4>
+          <a href="mailto:info@grimstattoo.com">info@grimstattoo.com</a>
+          <a href="tel:+387644154361">+387 64 4154 361</a>
+          <a href="https://www.instagram.com/grim.koji.tetovira/" target="_blank" rel="noopener">@grim.koji.tetovira</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Grim's Tattoo Studio</span>
+        <a href="#termin">Zakaži termin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      const year = document.getElementById('year');
+      if(year) year.textContent = new Date().getFullYear();
+
+      const setNav = () => nav.classList.toggle('scrolled', window.scrollY > 16);
+      setNav();
+      window.addEventListener('scroll', setNav, {passive:true});
+
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+
+      links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }));
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if(!target) return;
+        event.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        history.pushState(null, '', link.getAttribute('href'));
+      }));
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.14});
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      document.querySelectorAll('.faq-q').forEach(button => button.addEventListener('click', () => {
+        const item = button.closest('.faq');
+        const panel = item.querySelector('.faq-a');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-q').setAttribute('aria-expanded','false');
+          openItem.querySelector('.faq-a').style.maxHeight = '';
+        });
+        if(!wasOpen){
+          item.classList.add('open');
+          button.setAttribute('aria-expanded','true');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      }));
+
+      document.querySelectorAll('[data-track-whatsapp]').forEach(link => link.addEventListener('click', () => {
+        if(typeof window.gtag === 'function'){
+          window.gtag('event','whatsapp_click',{event_category:'contact',event_label:'booking_button'});
+        }
+      }));
+
+      const widgetScript = document.createElement('script');
+      widgetScript.type = 'module';
+      widgetScript.src = 'https://w.behold.so/widget.js';
+      document.head.appendChild(widgetScript);
+    })();
+  </script>
+</body>
+</html>
