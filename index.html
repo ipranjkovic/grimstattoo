@@ -44,6 +44,7 @@
     a{color:inherit;text-decoration:none}
     button{font:inherit}
     ::selection{background:var(--gold);color:var(--ink)}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
     .wrap{width:calc(100% - 40px);max-width:1180px;margin-inline:auto}
     .eyebrow{display:inline-flex;align-items:center;gap:.75rem;color:var(--gold);font-size:.68rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
     .eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
@@ -52,6 +53,9 @@
     .section-head p{max-width:620px;color:var(--muted);font-size:1rem}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:52px;padding:.9rem 1.2rem;border:1px solid transparent;background:transparent;color:inherit;font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease}
     .btn:hover{transform:translateY(-2px)}
+    .btn:active{transform:translateY(0)}
+    .btn .arrow{transition:transform .18s ease}
+    .btn:hover .arrow{transform:translateX(4px)}
     .btn-primary{background:var(--gold);color:var(--ink)}
     .btn-primary:hover{background:var(--paper)}
     .btn-secondary{border-color:rgba(241,234,223,.34);background:rgba(9,9,7,.28)}
@@ -77,21 +81,27 @@
     .hero{position:relative;min-height:92svh;display:grid;align-items:end;isolation:isolate;overflow:hidden;background:#080806}
     .hero-media,.hero-overlay{position:absolute;inset:0}
     .hero-media{z-index:-3}
-    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(.92) contrast(1.03) brightness(.44);transform:scale(1.04)}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(.92) contrast(1.03) brightness(.44);animation:heroBreathe 18s ease-in-out infinite alternate}
     .hero-overlay{z-index:-2;background:linear-gradient(90deg,rgba(9,9,7,.94) 0%,rgba(9,9,7,.76) 48%,rgba(9,9,7,.9) 100%),linear-gradient(180deg,rgba(9,9,7,.38) 0%,rgba(9,9,7,.58) 45%,var(--ink) 100%),radial-gradient(circle at 28% 32%,rgba(199,167,106,.12),transparent 34%)}
     .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;z-index:-1;height:34%;background:repeating-linear-gradient(90deg,rgba(241,234,223,.08) 0 1px,transparent 1px 12.5%)}
     .hero-inner{padding:8.5rem 0 clamp(3.7rem,8vw,5.6rem)}
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.62fr);gap:clamp(2rem,7vw,6rem);align-items:end}
     .hero-grid > *{min-width:0}
-    .hero-logo{width:100%;max-width:680px;aspect-ratio:2.06/1;margin-top:1rem;filter:drop-shadow(0 18px 48px rgba(0,0,0,.5))}
+    .hero-logo{width:100%;max-width:680px;aspect-ratio:2.06/1;margin-top:.85rem;filter:drop-shadow(0 18px 48px rgba(0,0,0,.5));animation:heroRise .65s .08s both}
     .hero-logo img{width:100%;height:100%;display:block;object-fit:contain;object-position:left center}
     .hero-manifesto{position:relative;width:100%;max-width:760px;margin-top:1.45rem;overflow:hidden;border-block:1px solid rgba(199,167,106,.34);color:rgba(241,234,223,.9);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
-    .hero-manifesto-track{display:flex;width:max-content;gap:1.15rem;padding:.72rem 0;animation:manifestoSlide 22s linear infinite}
+    .hero-manifesto-track{display:flex;width:max-content;gap:1.15rem;padding:.72rem 0;animation:manifestoSlide 30s linear infinite}
     .hero-manifesto span{display:inline-flex;align-items:center;gap:1.15rem;white-space:nowrap;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
     .hero-manifesto span::after{content:"/";color:var(--gold)}
     @keyframes manifestoSlide{to{transform:translateX(-50%)}}
+    @keyframes heroBreathe{from{transform:scale(1)}to{transform:scale(1.02)}}
+    @keyframes heroFade{from{opacity:0}to{opacity:1}}
+    @keyframes heroRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+    .hero .eyebrow{animation:heroFade .55s both}
+    .hero-manifesto{animation:heroRise .6s .14s both}
     .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
-    .hero-panel{border-left:1px solid rgba(199,167,106,.52);padding-left:1.35rem}
+    .hero-actions{animation:heroRise .6s .2s both}
+    .hero-panel{border-left:1px solid rgba(199,167,106,.52);padding-left:1.35rem;animation:heroRise .6s .24s both}
     .hero-panel p{color:rgba(241,234,223,.68);font-size:.95rem}
     .hero-panel strong{display:block;margin-bottom:.8rem;color:var(--paper);font-family:var(--serif);font-size:1.8rem;font-weight:600;line-height:1.05}
     .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(9,9,7,.62)}
@@ -122,7 +132,8 @@
     .work{background:#171511;color:var(--paper);overflow:hidden}
     .work-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(2rem,5vw,4rem);align-items:center}
     .work-photo{position:relative;min-height:640px;overflow:hidden}
-    .work-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;filter:grayscale(.75) contrast(1.08)}
+    .work-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;filter:grayscale(.75) contrast(1.08);transition:transform .6s ease}
+    .work-photo:hover img{transform:scale(1.018)}
     .work-photo::after{content:"";position:absolute;inset:0;border:1px solid rgba(241,234,223,.18);pointer-events:none}
     .work-copy{padding-block:2rem}
     .work-copy p{max-width:620px;margin-top:1.2rem;color:var(--muted)}
@@ -201,7 +212,7 @@
     .foot-col a:hover{color:var(--paper)}
     .footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding-top:1.35rem;border-top:1px solid var(--line);font-size:.78rem}
 
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
     .reveal.in{opacity:1;transform:none}
 
     @media(max-width:980px){
@@ -252,6 +263,7 @@
       html{scroll-behavior:auto}
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
       .reveal{opacity:1;transform:none}
+      .hero-manifesto-track,.hero-media img{animation:none!important;transform:none!important}
     }
   </style>
 </head>
@@ -270,13 +282,13 @@
   </nav>
 
   <header class="hero" id="hero">
-    <div class="hero-media" aria-hidden="true"><img src="o-meni-web.jpg" alt=""></div>
+    <div class="hero-media" aria-hidden="true"><img src="o-meni-web.jpg" alt="" width="1500" height="1200" fetchpriority="high"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">Vitez / Dotwork / Traditional</div>
-          <h1 class="hero-logo"><img src="grims tattoo studio logo-2.svg" alt="Grim's Tattoo Studio"></h1>
+          <div class="eyebrow">Custom · Dotwork · Traditional</div>
+          <h1 class="hero-logo"><img src="grims tattoo studio logo-2.svg" alt="Grim’s Tattoo Studio" width="680" height="330"></h1>
           <div class="hero-manifesto" aria-label="No hate - No prejudice - No ego trip - Just tattoos for everyone.">
             <div class="hero-manifesto-track" aria-hidden="true">
               <span>No hate</span><span>No prejudice</span><span>No ego trip</span><span>Just tattoos for everyone</span>
@@ -284,7 +296,7 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" data-track-whatsapp>Pošalji poruku <span class="arrow">↗</span></a>
+            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" aria-label="Pošalji ideju za tetovažu na WhatsApp" data-track-whatsapp>Pošalji ideju na WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
             <a class="btn btn-secondary" href="#radovi">Pogledaj radove</a>
           </div>
         </div>
