@@ -212,6 +212,19 @@
     .foot-col a:hover{color:var(--paper)}
     .footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding-top:1.35rem;border-top:1px solid var(--line);font-size:.78rem}
 
+    .offer-popup[hidden]{display:none}
+    .offer-popup{position:fixed;right:24px;bottom:24px;z-index:45;width:min(400px,calc(100% - 32px));padding:1.45rem;border:1px solid rgba(199,167,106,.58);background:#11110e;color:var(--paper);box-shadow:var(--shadow);opacity:0;transform:translateY(16px);transition:opacity .24s ease,transform .24s ease}
+    .offer-popup.is-visible{opacity:1;transform:none}
+    .offer-close{position:absolute;top:.75rem;right:.75rem;width:44px;height:44px;border:1px solid rgba(241,234,223,.25);background:transparent;color:var(--paper);font-size:1.45rem;line-height:1;cursor:pointer;transition:border-color .18s ease,color .18s ease}
+    .offer-close:hover{border-color:var(--gold);color:var(--gold)}
+    .offer-eyebrow{padding-right:3.5rem;color:var(--gold);font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .offer-title{max-width:320px;margin-top:.8rem;font-family:var(--serif);font-size:2.15rem;font-weight:600;line-height:1}
+    .offer-copy{margin-top:.9rem;color:var(--paper-2);font-size:.9rem;line-height:1.55}
+    .offer-primary{width:100%;margin-top:1.15rem}
+    .offer-later{display:block;margin:.75rem auto 0;padding:.45rem;border:0;background:transparent;color:var(--paper-2);font-size:.76rem;font-weight:700;cursor:pointer}
+    .offer-later:hover{color:var(--gold)}
+    .offer-terms{margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--line);color:rgba(241,234,223,.52);font-size:.68rem;line-height:1.45}
+
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
     .reveal.in{opacity:1;transform:none}
 
@@ -258,6 +271,8 @@
       .footer-grid{grid-template-columns:1fr}
       .footer-brand{grid-column:auto}
       .footer-bottom{flex-direction:column}
+      .offer-popup{right:0;bottom:0;left:0;width:100%;max-height:min(82svh,620px);overflow-y:auto;padding:1.35rem 1.15rem calc(1.15rem + env(safe-area-inset-bottom));border-width:1px 0 0}
+      .offer-title{max-width:300px;font-size:2rem}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
@@ -514,13 +529,142 @@
     </div>
   </footer>
 
+  <aside class="offer-popup" id="firstTattooOffer" role="dialog" aria-labelledby="offerTitle" aria-describedby="offerDescription offerTerms" hidden>
+    <button class="offer-close" id="offerClose" type="button" aria-label="Zatvori ponudu">×</button>
+    <p class="offer-eyebrow">Prva tetovaža</p>
+    <h2 class="offer-title" id="offerTitle">20% popusta na tvoju prvu tetovažu.</h2>
+    <p class="offer-copy" id="offerDescription">Pošalji svoju ideju putem WhatsAppa i ostvari 20% popusta na prvi dogovoreni termin.</p>
+    <a class="btn btn-primary offer-primary" id="offerWhatsapp" href="https://wa.me/387644154361?text=Pozdrav!%20Javljam%20se%20putem%20ponude%20za%2020%25%20popusta%20na%20prvu%20tetova%C5%BEu%20s%20web%20stranice%20Grim%E2%80%99s%20Tattoo%20Studija.%0A%0A%C5%BDelim%20poslati%20svoju%20ideju%20i%20provjeriti%20slobodan%20termin.%0A%0AMotiv%20ili%20ideja%3A%0ADio%20tijela%3A%0AOkvirna%20veli%C4%8Dina%3A%0ATermin%20ili%20period%20koji%20mi%20odgovara%3A%0AReference%20%C5%A1aljem%20u%20nastavku." target="_blank" rel="noopener" aria-label="Zatraži 20% popusta putem WhatsAppa">Zatraži 20% popusta <span class="arrow" aria-hidden="true">↗</span></a>
+    <button class="offer-later" id="offerLater" type="button">Ne sada</button>
+    <p class="offer-terms" id="offerTerms">Ponuda vrijedi za nove klijente i prvi dogovoreni termin. Ne može se kombinirati s drugim ponudama. Konačna cijena ovisi o motivu, veličini, detaljima i poziciji tetovaže.</p>
+  </aside>
+
   <script>
     (() => {
       const nav = document.getElementById('nav');
       const toggle = document.getElementById('navToggle');
       const links = document.getElementById('navLinks');
       const year = document.getElementById('year');
+      const offer = document.getElementById('firstTattooOffer');
+      const offerClose = document.getElementById('offerClose');
+      const offerLater = document.getElementById('offerLater');
+      const offerWhatsapp = document.getElementById('offerWhatsapp');
+      const offerStorageKey = 'grims_first_tattoo_offer';
+      const offerSessionKey = 'grims_first_tattoo_offer_shown';
+      let offerTimer;
+      let offerEligible = false;
+      let offerShownThisPage = false;
+      let offerSuspendedForMenu = false;
+      let previousFocus = null;
       if(year) year.textContent = new Date().getFullYear();
+
+      const trackOffer = eventName => {
+        if(typeof window.gtag === 'function'){
+          window.gtag('event', eventName, {offer_name:'first_tattoo_20'});
+        }
+      };
+
+      const readOfferState = () => {
+        try{
+          const value = JSON.parse(localStorage.getItem(offerStorageKey));
+          return value && value.expiresAt > Date.now() ? value : null;
+        }catch(error){
+          return null;
+        }
+      };
+
+      const hasShownOfferThisSession = () => {
+        try{return sessionStorage.getItem(offerSessionKey) === 'true';}
+        catch(error){return offerShownThisPage;}
+      };
+
+      const rememberOffer = days => {
+        try{
+          localStorage.setItem(offerStorageKey, JSON.stringify({expiresAt:Date.now() + days * 86400000}));
+        }catch(error){}
+      };
+
+      const markOfferShown = () => {
+        offerShownThisPage = true;
+        try{sessionStorage.setItem(offerSessionKey, 'true');}
+        catch(error){}
+      };
+
+      const removeOfferTriggers = () => {
+        clearTimeout(offerTimer);
+        window.removeEventListener('scroll', checkOfferScroll);
+      };
+
+      const showOffer = () => {
+        if(offerShownThisPage || hasShownOfferThisSession() || readOfferState() || document.body.classList.contains('menu-open')) return;
+        previousFocus = document.activeElement;
+        markOfferShown();
+        removeOfferTriggers();
+        offer.hidden = false;
+        requestAnimationFrame(() => {
+          offer.classList.add('is-visible');
+          offerClose.focus({preventScroll:true});
+        });
+        trackOffer('discount_popup_view');
+      };
+
+      const maybeShowOffer = () => {
+        if(offerEligible && !document.body.classList.contains('menu-open')) showOffer();
+      };
+
+      function checkOfferScroll(){
+        const pageHeight = document.documentElement.scrollHeight;
+        const progress = pageHeight > 0 ? (window.scrollY + window.innerHeight) / pageHeight : 0;
+        if(progress >= .4){
+          offerEligible = true;
+          maybeShowOffer();
+        }
+      }
+
+      const closeOffer = (days, analyticsEvent) => {
+        if(offer.hidden) return;
+        rememberOffer(days);
+        offer.classList.remove('is-visible');
+        window.setTimeout(() => {offer.hidden = true;}, 240);
+        if(analyticsEvent) trackOffer(analyticsEvent);
+        if(previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus({preventScroll:true});
+      };
+
+      const suspendOfferForMenu = () => {
+        if(offer.hidden) return;
+        offerSuspendedForMenu = true;
+        offer.classList.remove('is-visible');
+        offer.hidden = true;
+      };
+
+      const resumeOfferAfterMenu = () => {
+        if(!offerSuspendedForMenu) return;
+        offerSuspendedForMenu = false;
+        offer.hidden = false;
+        requestAnimationFrame(() => offer.classList.add('is-visible'));
+      };
+
+      if(!readOfferState() && !hasShownOfferThisSession()){
+        offerTimer = window.setTimeout(() => {
+          offerEligible = true;
+          maybeShowOffer();
+        }, 10000);
+        window.addEventListener('scroll', checkOfferScroll, {passive:true});
+        checkOfferScroll();
+      }
+
+      offerClose.addEventListener('click', () => closeOffer(7, 'discount_popup_close'));
+      offerLater.addEventListener('click', () => closeOffer(7, 'discount_popup_close'));
+      offerWhatsapp.addEventListener('click', () => {
+        rememberOffer(30);
+        trackOffer('discount_whatsapp_click');
+        offer.classList.remove('is-visible');
+        offer.hidden = true;
+      });
+
+      document.addEventListener('keydown', event => {
+        if(event.key === 'Escape' && !offer.hidden) closeOffer(7, 'discount_popup_close');
+      });
 
       const setNav = () => nav.classList.toggle('scrolled', window.scrollY > 16);
       setNav();
@@ -531,6 +675,8 @@
         toggle.classList.toggle('open', open);
         document.body.classList.toggle('menu-open', open);
         toggle.setAttribute('aria-expanded', String(open));
+        if(open) suspendOfferForMenu();
+        else resumeOfferAfterMenu();
       });
 
       links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
@@ -538,6 +684,7 @@
         toggle.classList.remove('open');
         document.body.classList.remove('menu-open');
         toggle.setAttribute('aria-expanded', 'false');
+        resumeOfferAfterMenu();
       }));
 
       document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
