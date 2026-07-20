@@ -31,7 +31,7 @@
   <meta name="twitter:image:alt" content="Tetoviranje u Grim’s Tattoo Studiju u Vitezu">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Pirata+One&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -110,7 +110,6 @@
     }
     html{scroll-behavior:smooth;background:var(--ink)}
     body{min-width:320px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.65;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
     button{font:inherit}
@@ -118,7 +117,6 @@
     :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
     .wrap{width:calc(100% - 40px);max-width:1180px;margin-inline:auto}
     .eyebrow{display:inline-flex;align-items:center;gap:.75rem;color:var(--gold);font-size:.68rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
-    .eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
     .display{font-family:var(--serif);font-size:clamp(3rem,7vw,6.7rem);font-weight:600;line-height:.84;letter-spacing:0;text-wrap:balance}
     .section-head{display:grid;grid-template-columns:.78fr 1.22fr;align-items:end;gap:clamp(2rem,5vw,5rem);margin-bottom:clamp(2.6rem,6vw,4.8rem)}
     .section-head p{max-width:620px;color:var(--muted);font-size:1rem}
@@ -172,9 +170,6 @@
     .hero-manifesto{animation:heroRise .6s .14s both}
     .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
     .hero-actions{animation:heroRise .6s .2s both}
-    .hero-panel{border-left:1px solid rgba(199,167,106,.52);padding-left:1.35rem;animation:heroRise .6s .24s both}
-    .hero-panel p{color:rgba(241,234,223,.68);font-size:.95rem}
-    .hero-panel strong{display:block;margin-bottom:.8rem;color:var(--paper);font-family:var(--serif);font-size:1.8rem;font-weight:600;line-height:1.05}
     .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(9,9,7,.62)}
     .hero-fact{padding:1.25rem clamp(1.15rem,2vw,2rem);border-right:1px solid var(--line)}
     .hero-fact:last-child{border-right:0}
@@ -182,15 +177,6 @@
     .hero-fact span{font-family:var(--serif);font-size:1.42rem;line-height:1.1}
 
     section{position:relative;padding:clamp(5rem,10vw,8rem) 0}
-    .intro{background:var(--paper);color:var(--ink)}
-    .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2rem,6vw,5.5rem);align-items:center}
-    .intro .eyebrow{color:var(--gold-2)}
-    .intro p{margin-top:1.25rem;color:#555047;font-size:1.02rem}
-    .intro-lines{display:grid;gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
-    .intro-line{display:grid;grid-template-columns:92px 1fr;gap:1.25rem;align-items:center;padding:1.2rem;background:#fbf7ef}
-    .intro-line b{font-family:var(--serif);color:var(--clay);font-size:2.1rem;line-height:1}
-    .intro-line span{color:#413c34}
-
     .styles{background:var(--ink)}
     .style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
     .style-card{min-height:320px;padding:clamp(1.5rem,3vw,2.3rem);background:var(--ink-2);display:flex;flex-direction:column;justify-content:space-between;transition:background .2s ease}
@@ -209,10 +195,6 @@
     .work-copy{padding-block:2rem}
     .work-copy p{max-width:620px;margin-top:1.2rem;color:var(--muted)}
     .work-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
-    .about-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:2rem;background:var(--line);border:1px solid var(--line)}
-    .about-fact{padding:1rem;background:#0f0f0c}
-    .about-fact b{display:block;color:var(--gold);font-family:var(--serif);font-size:2.55rem;line-height:1}
-    .about-fact span{display:block;margin-top:.35rem;color:rgba(241,234,223,.62);font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
     .feed-section{scroll-margin-top:90px;background:#171511;color:var(--paper);padding-top:0}
     .feed-section .section-head{margin-bottom:2rem}
     .instagram-feed-box{scroll-margin-top:90px;margin-top:2rem;min-height:430px;overflow:hidden;border:1px solid rgba(241,234,223,.18);background:rgba(241,234,223,.05)}
@@ -237,9 +219,6 @@
     .booking .display{max-width:820px}
     .booking p{max-width:680px;margin-top:1.2rem;color:rgba(241,234,223,.78)}
     .booking-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
-    .booking-list{border-top:1px solid rgba(241,234,223,.22)}
-    .booking-list li{list-style:none;display:grid;grid-template-columns:auto 1fr;gap:.9rem;padding:1rem 0;border-bottom:1px solid rgba(241,234,223,.22);color:rgba(241,234,223,.84)}
-    .booking-list span{color:var(--gold);font-weight:800}
 
     .studio{background:var(--ink);color:var(--paper)}
     .studio-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.88fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
@@ -300,8 +279,7 @@
     .reveal.in{opacity:1;transform:none}
 
     @media(max-width:980px){
-      .section-head,.hero-grid,.intro-grid,.work-layout,.booking-band,.studio-grid{grid-template-columns:1fr}
-      .hero-panel{max-width:560px}
+      .section-head,.hero-grid,.work-layout,.booking-band,.studio-grid{grid-template-columns:1fr}
       .style-grid,.steps{grid-template-columns:1fr 1fr}
       .work-photo{min-height:460px}
       .footer-grid{grid-template-columns:1fr 1fr}
@@ -327,16 +305,14 @@
       .hero-actions,.booking-actions,.work-actions{width:100%;max-width:360px;flex-direction:column}
       .hero-actions .btn,.booking-actions .btn,.work-actions .btn{width:100%}
       .hero-manifesto{max-width:100%}
-      .hero-facts,.portfolio-strip,.contact-bar,.stats,.about-facts{grid-template-columns:1fr}
+      .hero-facts,.portfolio-strip,.contact-bar,.stats{grid-template-columns:1fr}
       .hero-fact,.contact-item{border-right:0;border-bottom:1px solid var(--line)}
       .hero-fact:last-child,.contact-item:last-child{border-bottom:0}
       section{padding:4.4rem 0}
       .style-grid,.steps{grid-template-columns:1fr}
       .step{min-height:230px;border-right:0;border-bottom:1px solid var(--line-dark)}
       .step:last-child{border-bottom:0}
-      .intro-line{grid-template-columns:68px 1fr}
       .work-photo{min-height:360px}
-      .booking-list{margin-top:1rem}
       .faq-q{grid-template-columns:42px 1fr 34px}
       .faq-a p{padding-left:42px}
       .footer-grid{grid-template-columns:1fr}
@@ -344,6 +320,161 @@
       .footer-bottom{flex-direction:column}
       .offer-popup{right:0;bottom:0;left:0;width:100%;max-height:min(82svh,620px);overflow-y:auto;overscroll-behavior:contain;padding:1.35rem 1.15rem calc(1.15rem + env(safe-area-inset-bottom));border-width:1px 0 0}
       .offer-title{max-width:300px;font-size:2rem}
+    }
+    /* Open editorial layout with fewer visual containers. */
+    :root{
+      --ink:#0b0b0a;
+      --ink-2:#151512;
+      --paper:#f3f0e9;
+      --paper-2:#d8d4cc;
+      --muted:#aaa69e;
+      --gold:#d7b66c;
+      --gold-2:#8b6b2f;
+      --clay:#db5741;
+      --moss:#171714;
+      --line:rgba(243,240,233,.13);
+      --line-dark:rgba(11,11,10,.13);
+      --shadow:0 24px 70px rgba(0,0,0,.4);
+      --display:"Instrument Serif",Georgia,serif;
+      --serif:"Instrument Serif",Georgia,serif;
+      --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+    }
+    body{background:var(--ink);font-family:var(--sans);line-height:1.6}
+    body::before{display:none}
+    .wrap{width:calc(100% - clamp(32px,7vw,104px));max-width:1320px}
+    .eyebrow{gap:0;color:var(--clay);font-size:.71rem;font-weight:700;letter-spacing:.16em}
+    .eyebrow::before{display:none}
+    .display{font-family:var(--display);font-size:clamp(3.35rem,7vw,6.8rem);font-weight:400;line-height:.9}
+    .section-head{grid-template-columns:minmax(0,1.1fr) minmax(280px,.68fr);gap:clamp(2rem,8vw,8rem);margin-bottom:clamp(3rem,7vw,6rem)}
+    .section-head p{font-size:1.05rem;line-height:1.7}
+    .btn{min-height:50px;padding:.82rem 1.35rem;border-radius:999px;font-size:.74rem;letter-spacing:.1em;transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
+    .btn:hover,.btn:active{transform:none}
+    .btn-primary{background:var(--paper);color:var(--ink)}
+    .btn-primary:hover{background:var(--gold);box-shadow:0 0 0 5px rgba(215,182,108,.14)}
+    .btn-secondary{border-color:rgba(243,240,233,.34);background:transparent}
+    .btn-secondary:hover{border-color:var(--paper);background:var(--paper);color:var(--ink)}
+    .btn-dark{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+    .btn-dark:hover{background:var(--clay);border-color:var(--clay)}
+    .arrow{display:none}
+
+    .site-nav{padding:1.15rem clamp(1.25rem,4vw,4rem)}
+    .site-nav.scrolled{background:rgba(11,11,10,.88);border-bottom:0}
+    .brand{font-size:1.3rem}
+    .nav-links{gap:clamp(.4rem,1.2vw,1.1rem)}
+    .nav-links a{padding:.55rem .8rem;border-radius:999px;letter-spacing:.12em}
+    .nav-links a:not(.nav-cta)::after{display:none}
+    .nav-links a:hover{background:rgba(243,240,233,.09)}
+    .nav-cta{border-color:rgba(215,182,108,.48)}
+    .nav-toggle{border:0;border-radius:50%;background:rgba(243,240,233,.1)}
+
+    .hero{min-height:94svh;background:#090908}
+    .hero-media img{filter:grayscale(.9) contrast(1.04) brightness(.42)}
+    .hero-overlay{background:linear-gradient(90deg,rgba(11,11,10,.94) 0%,rgba(11,11,10,.7) 56%,rgba(11,11,10,.82) 100%),linear-gradient(180deg,rgba(11,11,10,.22),var(--ink) 100%)}
+    .hero::after{display:none}
+    .hero-inner{padding:9rem 0 clamp(4.5rem,9vw,7rem)}
+    .hero-grid{grid-template-columns:minmax(0,840px);gap:0}
+    .hero-logo{max-width:720px;margin-top:1.15rem}
+    .hero-manifesto{max-width:760px;margin-top:1.65rem;border:0;color:rgba(243,240,233,.78);mask-image:none}
+    .hero-manifesto-track{padding:.35rem 0}
+    .hero-manifesto span{font-size:.69rem;letter-spacing:.16em}
+    .hero-manifesto span::after{content:"•";color:var(--clay)}
+    .hero-actions{gap:.75rem;margin-top:2.2rem}
+    .hero-facts{display:flex;flex-wrap:wrap;gap:clamp(2rem,7vw,7rem);padding:0 clamp(1.25rem,7vw,6.5rem) 2.5rem;border:0;background:transparent}
+    .hero-fact{padding:0;border:0}
+    .hero-fact small{margin-bottom:.15rem;color:var(--gold);font-size:.61rem;letter-spacing:.14em}
+    .hero-fact span{font-family:var(--sans);font-size:.94rem;font-weight:500}
+
+    section{padding:clamp(5.5rem,11vw,9.5rem) 0}
+    .styles{background:var(--paper);color:var(--ink)}
+    .styles .section-head p{color:#5c5953}
+    .style-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,6vw,6rem);border:0;background:transparent}
+    .style-card{min-height:0;padding:0;background:transparent;display:block}
+    .style-card:hover{background:transparent}
+    .style-card small{color:var(--clay);letter-spacing:.14em}
+    .style-card h3{margin-top:1rem;font-family:var(--display);font-size:clamp(2.5rem,4.5vw,4.2rem);font-weight:400;line-height:.9}
+    .style-card p{max-width:360px;margin-top:1.25rem;color:#5c5953;line-height:1.7}
+    .style-card .mark{margin-top:2rem;align-self:auto;color:rgba(11,11,10,.24);font-family:var(--sans);font-size:1rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+    .work{background:var(--ink);overflow:hidden}
+    .work-layout{grid-template-columns:minmax(0,1.05fr) minmax(320px,.72fr);gap:clamp(3rem,9vw,9rem)}
+    .work-photo{min-height:0;aspect-ratio:2/3;border-radius:8px}
+    .work-photo img{filter:saturate(.82) contrast(1.04)}
+    .work-photo::after{display:none}
+    .work-copy p{font-size:1.03rem;line-height:1.75}
+    .work-actions{gap:.75rem;margin-top:2.2rem}
+
+    .feed-section{background:var(--ink);padding-top:clamp(5.5rem,11vw,9.5rem)}
+    .instagram-feed-box{margin-top:0;min-height:430px;border:0;background:transparent;overflow:visible}
+    .feed-note{text-align:left}
+
+    .process{background:var(--paper);color:var(--ink)}
+    .process .section-head p{color:#5c5953}
+    .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,7vw,7rem);border:0}
+    .step{min-height:0;padding:0;border:0;display:block}
+    .step:last-child{border:0}
+    .step-num{color:var(--clay);font-family:var(--sans);font-size:.9rem;font-weight:700;font-variant-numeric:tabular-nums}
+    .step h3{margin-top:1.2rem;font-family:var(--display);font-size:clamp(2.35rem,4vw,3.6rem);font-weight:400}
+    .step p{max-width:350px;margin-top:1rem;color:#5c5953;line-height:1.7}
+
+    .booking{background:var(--ink-2);color:var(--paper)}
+    .booking-band{display:block;max-width:940px;margin-inline:auto;text-align:center}
+    .booking .display{max-width:900px}
+    .booking p{max-width:620px;margin:1.4rem auto 0;color:rgba(243,240,233,.7)}
+    .booking-actions{justify-content:center;gap:.75rem;margin-top:2.2rem}
+
+    .location{background:var(--paper);color:var(--ink)}
+    .location .section-head p{color:#5c5953}
+    .map-shell{border:0;background:#d8d5cf}
+    .map-shell iframe{filter:grayscale(.82) contrast(1.03)}
+    .contact-bar{gap:clamp(1.5rem,6vw,6rem);padding:2.2rem clamp(1.25rem,7vw,6.5rem);background:var(--ink)}
+    .contact-item{padding:0;border:0}
+    .contact-item small{color:var(--gold);letter-spacing:.14em}
+    .contact-item span,.contact-item a{font-family:var(--sans);font-size:1rem}
+
+    .faq-list{border-top-color:rgba(243,240,233,.1)}
+    .faq{border-bottom-color:rgba(243,240,233,.1)}
+    .faq-index{color:var(--clay);font-family:var(--sans);font-size:.85rem;font-weight:700;font-variant-numeric:tabular-nums}
+    .faq-title{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400}
+    .faq-icon{border:0;border-radius:50%;background:rgba(243,240,233,.08)}
+    .faq.open .faq-icon{background:var(--paper);color:var(--ink)}
+
+    footer{padding-top:4.5rem;border-top:0}
+    .footer-grid{gap:clamp(2rem,7vw,7rem)}
+    .footer-bottom{border-top-color:rgba(243,240,233,.1)}
+
+    .offer-popup{border:0;border-radius:8px;background:#171714}
+    .offer-close{border:0;border-radius:50%;background:rgba(243,240,233,.08)}
+    .offer-close:hover{background:var(--paper);color:var(--ink)}
+    .offer-title{font-family:var(--display);font-weight:400}
+    .offer-terms{border-top-color:rgba(243,240,233,.1)}
+    .reveal{transform:translateY(12px)}
+
+    @media(max-width:980px){
+      .section-head,.work-layout{grid-template-columns:1fr}
+      .style-grid,.steps{grid-template-columns:1fr;gap:3.5rem}
+      .work-layout{gap:3.5rem}
+    }
+    @media(max-width:760px){
+      .wrap{width:calc(100% - 32px)}
+      .site-nav{padding:1rem}
+      .nav-links{gap:.4rem;border-left:0}
+      .nav-links a{padding:.5rem .7rem}
+      .hero{min-height:92svh}
+      .hero-inner{padding-top:7.2rem}
+      .hero-logo{max-width:100%}
+      .hero-facts{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem 2rem;padding:0 1rem 1.8rem}
+      .hero-fact,.hero-fact:last-child{padding:0;border:0}
+      .hero-actions,.booking-actions,.work-actions{max-width:none}
+      .hero-actions .btn,.booking-actions .btn,.work-actions .btn{width:100%}
+      section{padding:5.4rem 0}
+      .style-grid,.steps{grid-template-columns:1fr;gap:3.5rem}
+      .style-card,.step,.step:last-child{min-height:0;padding:0;border:0}
+      .work-photo{min-height:0;aspect-ratio:2/3}
+      .contact-bar{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1rem}
+      .contact-item,.contact-item:last-child{padding:0;border:0}
+      .faq-q{grid-template-columns:32px 1fr 34px}
+      .faq-a p{padding-left:32px}
+      .offer-popup{border-radius:8px 8px 0 0;border:0}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
@@ -382,14 +513,10 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" aria-label="Pošalji ideju za tetovažu na WhatsApp" data-track-whatsapp>Pošalji ideju na WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" aria-label="Pošalji ideju za tetovažu na WhatsApp" data-track-whatsapp>Pošalji ideju na WhatsApp</a>
             <a class="btn btn-secondary" href="#radovi" data-track-portfolio>Pogledaj radove</a>
           </div>
         </div>
-        <aside class="hero-panel">
-          <strong>Od tvoje ideje, do završene kompozicije.</strong>
-          <p>Pošalji opis, mjesto na tijelu, okvirnu veličinu i reference. Odgovaram s prijedlogom termina i smjerom dizajna.</p>
-        </aside>
       </div>
     </div>
     <div class="hero-facts" aria-label="Kratke informacije">
@@ -400,21 +527,6 @@
   </header>
 
   <main>
-    <section class="intro" id="pristup">
-      <div class="wrap intro-grid">
-        <div class="reveal">
-          <div class="eyebrow">Pristup</div>
-          <h2 class="display">Step-by-step do termina</h2>
-          <p>U ova tri koraka dobiješ termin</p>
-        </div>
-        <div class="intro-lines reveal">
-          <div class="intro-line"><b>01</b><span>Javi se porukom.</span></div>
-          <div class="intro-line"><b>02</b><span>Pričamo o ideji, stilu, šalješ referentne fotke, opišeš što želiš.</span></div>
-          <div class="intro-line"><b>03</b><span>Dolaziš u studio u dogovorenom terminu, i ostalo je na meni.</span></div>
-        </div>
-      </div>
-    </section>
-
     <section class="styles" id="stilovi">
       <div class="wrap">
         <div class="section-head reveal">
@@ -443,19 +555,14 @@
 
     <section class="work" id="omeni">
       <div class="wrap work-layout">
-        <div class="work-photo reveal"><img src="o-meni-web.jpg" alt="Grim tijekom tetoviranja u studiju u Vitezu" width="1500" height="1200" loading="lazy" decoding="async"></div>
+        <div class="work-photo reveal"><img src="grim-o-meni.png" alt="Grim u tattoo studiju u Vitezu" width="1024" height="1536" loading="lazy" decoding="async"></div>
         <div class="work-copy reveal">
-          <div class="eyebrow">O meni</div>
-          <h2 class="display">Tko je Grim?</h2>
+          <h2 class="display">O meni</h2>
           <p>Tetoviram nešto duže od 3 godine, specijaliziran za dotwork &amp; traditional. Svaku tetovažu radim kao zaseban projekt - od prve ideje do zacijeljenog rezultata.</p>
           <p>Vjerujem da dobra tetovaža počinje razgovorom. Zato uzimam vremena da razumijem što želiš prije nego što uzmem iglu u ruke.</p>
           <div class="work-actions">
             <a class="btn btn-primary" href="#termin">Dogovori termin</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/grim.koji.tetovira/" target="_blank" rel="noopener" aria-label="Otvori Instagram profil Grim koji tetovira" data-track-instagram>Instagram <span class="arrow" aria-hidden="true">↗</span></a>
-          </div>
-          <div class="about-facts" aria-label="Iskustvo">
-            <div class="about-fact"><b>100+</b><span>Zadovoljnih klijenata</span></div>
-            <div class="about-fact"><b>3+</b><span>Godina iskustva</span></div>
+            <a class="btn btn-secondary" href="https://www.instagram.com/grim.koji.tetovira/" target="_blank" rel="noopener" aria-label="Otvori Instagram profil Grim koji tetovira" data-track-instagram>Instagram</a>
           </div>
         </div>
       </div>
@@ -489,8 +596,7 @@
         <div class="steps reveal">
           <article class="step"><div><div class="step-num">01</div><h3>Pošalji poruku</h3><p>Napiši ideju, mjesto na tijelu, okvirnu veličinu i pošalji reference ako ih imaš.</p></div></article>
           <article class="step"><div><div class="step-num">02</div><h3>Dogovor</h3><p>Dobiješ odgovor, okvir cijene, smjer dizajna i prijedlog slobodnog termina.</p></div></article>
-          <article class="step"><div><div class="step-num">03</div><h3>Skica</h3><p>Dizajn se čisti i prilagođava tijelu, bez kopiranja tuđih radova jedan na jedan.</p></div></article>
-          <article class="step"><div><div class="step-num">04</div><h3>Tetoviranje</h3><p>Dolaziš u studio, prolazimo poziciju i nakon rada dobivaš upute za njegu.</p></div></article>
+          <article class="step"><div><div class="step-num">03</div><h3>Tetoviranje</h3><p>Dolaziš u studio, prolazimo poziciju i nakon rada dobivaš upute za njegu.</p></div></article>
         </div>
       </div>
     </section>
@@ -500,20 +606,11 @@
         <div class="reveal">
           <div class="eyebrow">Termini</div>
           <h2 class="display">Pošalji poruku i krenimo od ideje.</h2>
-          <p>U jednoj poruci pošalji opis motiva, dio tijela, okvirnu veličinu i reference. Ako nisi siguran što točno želiš, napiši smjer i zajedno ćemo ga razraditi.</p>
+          <p>Pošalji opis motiva, dio tijela, okvirnu veličinu i reference.</p>
           <div class="booking-actions">
-            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" aria-label="Pošalji poruku na WhatsApp" data-track-whatsapp>WhatsApp poruka <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn-primary" href="https://wa.me/387644154361?text=Pozdrav%2C%20zanima%20me%20termin%20za%20tetova%C5%BEu.%20Poslao%2Fla%20bih%20opis%20ideje%2C%20mjesto%20na%20tijelu%20i%20okvirnu%20veli%C4%8Dinu." target="_blank" rel="noopener" aria-label="Pošalji poruku na WhatsApp" data-track-whatsapp>WhatsApp poruka</a>
             <a class="btn btn-secondary" href="tel:+387644154361" aria-label="Nazovi Grim’s Tattoo Studio">Pozovi studio</a>
           </div>
-        </div>
-        <ul class="booking-list reveal">
-          <li><span>✓</span><p>Opis ideje ili značenja motiva</p></li>
-          <li><span>✓</span><p>Mjesto na tijelu i okvirna veličina</p></li>
-          <li><span>✓</span><p>Reference kao slike ili linkovi</p></li>
-          <li><span>✓</span><p>Datumi ili period koji ti odgovara</p></li>
-        </ul>
-      </div>
-    </section>
         </div>
       </div>
     </section>
@@ -603,7 +700,7 @@
     <p class="offer-eyebrow">Prva tetovaža</p>
     <h2 class="offer-title" id="offerTitle">20% popusta na tvoju prvu tetovažu.</h2>
     <p class="offer-copy" id="offerDescription">Pošalji svoju ideju putem WhatsAppa i ostvari 20% popusta na prvi dogovoreni termin.</p>
-    <a class="btn btn-primary offer-primary" id="offerWhatsapp" href="https://wa.me/387644154361?text=Pozdrav!%20Javljam%20se%20putem%20ponude%20za%2020%25%20popusta%20na%20prvu%20tetova%C5%BEu%20s%20web%20stranice%20Grim%E2%80%99s%20Tattoo%20Studija.%0A%0A%C5%BDelim%20poslati%20svoju%20ideju%20i%20provjeriti%20slobodan%20termin.%0A%0AMotiv%20ili%20ideja%3A%0ADio%20tijela%3A%0AOkvirna%20veli%C4%8Dina%3A%0ATermin%20ili%20period%20koji%20mi%20odgovara%3A%0AReference%20%C5%A1aljem%20u%20nastavku." target="_blank" rel="noopener" aria-label="Zatraži 20% popusta putem WhatsAppa">Zatraži 20% popusta <span class="arrow" aria-hidden="true">↗</span></a>
+    <a class="btn btn-primary offer-primary" id="offerWhatsapp" href="https://wa.me/387644154361?text=Pozdrav!%20Javljam%20se%20preko%20ponude%20za%2020%25%20popusta%20na%20prvu%20tetova%C5%BEu.%20Zanima%20me%20slobodan%20termin%2C%20a%20ideju%20i%20reference%20%C5%A1aljem%20u%20nastavku." target="_blank" rel="noopener" aria-label="Zatraži 20% popusta putem WhatsAppa">Zatraži 20% popusta</a>
     <button class="offer-later" id="offerLater" type="button">Ne sada</button>
     <p class="offer-terms" id="offerTerms">Ponuda vrijedi za nove klijente i prvi dogovoreni termin. Ne može se kombinirati s drugim ponudama. Konačna cijena ovisi o motivu, veličini, detaljima i poziciji tetovaže.</p>
   </aside>
