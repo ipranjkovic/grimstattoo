@@ -1,9 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://grimstattoo.com/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://grimstattoo.com/blog/fotografija-svjeze-tetovaze/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://grimstattoo.com/blog/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://grimstattoo.com/blog/od-referenci-do-tvog-motiva/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://grimstattoo.com/blog/od-skice-do-koze/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://grimstattoo.com/blog/old-school-tetovaze/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://grimstattoo.com/blog/tetovaza-ne-mora-imati-znacenje/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>
