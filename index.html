@@ -14,7 +14,7 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#090907">
   <link rel="canonical" href="https://grimstattoo.com/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23090907'/%3E%3Cpath d='M17 45 32 12l15 33h-9l-2-6h-8l-2 6h-9Zm14-13h3l-1.5-5-1.5 5Z' fill='%23c7a76a'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="/assets/grim-logo-2027.svg">
   <title>Grim’s Tattoo Studio Vitez | Custom, Dotwork i Traditional</title>
   <meta property="og:title" content="Grim’s Tattoo Studio Vitez | Custom, Dotwork i Traditional">
   <meta property="og:description" content="Custom, dotwork i traditional tetovaže u Vitezu. Pogledaj radove i pošalji svoju ideju izravno na WhatsApp.">
@@ -44,7 +44,7 @@
         "description": "Tattoo studio u Vitezu za custom, dotwork i traditional tetovaže.",
         "telephone": "+387644154361",
         "image": "https://grimstattoo.com/o-meni-web.jpg",
-        "logo": "https://grimstattoo.com/grims%20tattoo%20studio%20logo-2.svg",
+        "logo": "https://grimstattoo.com/assets/grim-logo-2027.svg",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Stjepana Radića 146",
@@ -157,7 +157,7 @@
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.62fr);gap:clamp(2rem,7vw,6rem);align-items:end}
     .hero-grid > *{min-width:0}
     .hero-logo{width:100%;max-width:680px;aspect-ratio:2.06/1;margin-top:.85rem;filter:drop-shadow(0 18px 48px rgba(0,0,0,.5));animation:heroRise .65s .08s both}
-    .hero-logo img{width:100%;height:100%;display:block;object-fit:contain;object-position:left center}
+    .hero-logo img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
     .hero-manifesto{position:relative;width:100%;max-width:760px;margin-top:1.45rem;overflow:hidden;border-block:1px solid rgba(199,167,106,.34);color:rgba(241,234,223,.9);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
     .hero-manifesto-track{display:flex;width:max-content;gap:1.15rem;padding:.72rem 0;animation:manifestoSlide 30s linear infinite}
     .hero-manifesto span{display:inline-flex;align-items:center;gap:1.15rem;white-space:nowrap;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
@@ -372,13 +372,14 @@
     .hero-overlay{background:linear-gradient(90deg,rgba(11,11,10,.94) 0%,rgba(11,11,10,.7) 56%,rgba(11,11,10,.82) 100%),linear-gradient(180deg,rgba(11,11,10,.22),var(--ink) 100%)}
     .hero::after{display:none}
     .hero-inner{padding:9rem 0 clamp(4.5rem,9vw,7rem)}
-    .hero-grid{grid-template-columns:minmax(0,840px);gap:0}
-    .hero-logo{max-width:720px;margin-top:1.15rem}
-    .hero-manifesto{max-width:760px;margin-top:1.65rem;border:0;color:rgba(243,240,233,.78);mask-image:none}
+    .hero-grid{grid-template-columns:minmax(0,840px);gap:0;justify-content:center}
+    .hero-grid > div{text-align:center}
+    .hero-logo{max-width:520px;aspect-ratio:371.1/278.3;margin:1.15rem auto 0}
+    .hero-manifesto{max-width:760px;margin:1.65rem auto 0;border:0;color:rgba(243,240,233,.78);mask-image:none}
     .hero-manifesto-track{padding:.35rem 0}
     .hero-manifesto span{font-size:.69rem;letter-spacing:.16em}
     .hero-manifesto span::after{content:"•";color:var(--clay)}
-    .hero-actions{justify-content:center;max-width:760px;gap:.75rem;margin-top:2.2rem}
+    .hero-actions{justify-content:center;max-width:760px;gap:.75rem;margin:2.2rem auto 0}
     .hero-whatsapp{border-color:#25d366;background:#25d366;color:#0b0b0a}
     .hero-whatsapp:hover{border-color:#20bd5b;background:#20bd5b;color:#0b0b0a;box-shadow:0 0 0 5px rgba(37,211,102,.16)}
     .hero-facts{display:flex;flex-wrap:wrap;gap:clamp(2rem,7vw,7rem);padding:0 clamp(1.25rem,7vw,6.5rem) 2.5rem;border:0;background:transparent}
@@ -507,7 +508,7 @@
       <div class="hero-grid">
         <div>
           <div class="eyebrow">Custom · Dotwork · Traditional</div>
-          <h1 class="hero-logo"><img src="grims tattoo studio logo-2.svg" alt="Grim’s Tattoo Studio" width="680" height="330"></h1>
+          <h1 class="hero-logo"><img src="assets/grim-logo-2027.svg" alt="Tattoo Studio Grim" width="371" height="278" fetchpriority="high"></h1>
           <div class="hero-manifesto" aria-label="No hate - No prejudice - No ego trip - Just tattoos for everyone.">
             <div class="hero-manifesto-track" aria-hidden="true">
               <span>No hate</span><span>No prejudice</span><span>No ego trip</span><span>Just tattoos for everyone</span>
