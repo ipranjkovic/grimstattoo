@@ -157,7 +157,7 @@
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.62fr);gap:clamp(2rem,7vw,6rem);align-items:end}
     .hero-grid > *{min-width:0}
     .hero-logo{width:100%;max-width:680px;aspect-ratio:2.06/1;margin-top:.85rem;filter:drop-shadow(0 18px 48px rgba(0,0,0,.5));animation:heroRise .65s .08s both}
-    .hero-logo img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+    .hero-logo img{width:100%;height:100%;display:block;object-fit:contain;object-position:center;transform-origin:50% 80%}
     .hero-manifesto{position:relative;width:100%;max-width:760px;margin-top:1.45rem;overflow:hidden;border-block:1px solid rgba(239,53,44,.34);color:rgba(247,242,233,.9);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
     .hero-manifesto-track{display:flex;width:max-content;gap:1.15rem;padding:.72rem 0;animation:manifestoSlide 30s linear infinite}
     .hero-manifesto span{display:inline-flex;align-items:center;gap:1.15rem;white-space:nowrap;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
@@ -814,6 +814,42 @@
         if(!offer.hidden) closeOffer(7, 'discount_popup_close');
         if(links.classList.contains('open')) setNavigationState(false);
       });
+
+      const logoImage = document.querySelector('.hero-logo img');
+      const heroSection = document.querySelector('.hero');
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let logoFrame = 0;
+      let logoScrollEnd = 1;
+      const smoothStep = value => value * value * (3 - 2 * value);
+      const renderLogoScroll = () => {
+        logoFrame = 0;
+        if(motionPreference.matches){
+          logoImage.style.removeProperty('transform');
+          logoImage.style.removeProperty('opacity');
+          logoImage.style.removeProperty('will-change');
+          return;
+        }
+        const distance = Math.max(0, window.scrollY - heroSection.offsetTop);
+        const progress = Math.min(1, distance / logoScrollEnd);
+        const growth = smoothStep(progress);
+        const fade = smoothStep(Math.max(0, Math.min(1, (progress - .06) / .9)));
+        logoImage.style.transform = `scale(${1 + growth * .6})`;
+        logoImage.style.opacity = String(1 - fade);
+        logoImage.style.willChange = progress < 1 ? 'transform, opacity' : 'auto';
+      };
+      const queueLogoScroll = () => {
+        if(!logoFrame) logoFrame = requestAnimationFrame(renderLogoScroll);
+      };
+      const measureLogoScroll = () => {
+        logoScrollEnd = Math.max(1, heroSection.offsetHeight - window.innerHeight * .25);
+        queueLogoScroll();
+      };
+      window.addEventListener('scroll', queueLogoScroll, {passive:true});
+      window.addEventListener('resize', measureLogoScroll, {passive:true});
+      window.addEventListener('pageshow', measureLogoScroll);
+      motionPreference.addEventListener('change', queueLogoScroll);
+      new ResizeObserver(measureLogoScroll).observe(heroSection);
+      measureLogoScroll();
 
       const setNav = () => nav.classList.toggle('scrolled', window.scrollY > 16);
       setNav();
